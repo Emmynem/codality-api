@@ -13,7 +13,7 @@ dotenv.config();
 
 const { NODE_ENV } = process.env;
 
-const debug = debugLib('designs-by-joquine-api:app');
+const debug = debugLib('codality-api:app');
 
 /**
  * Get port from environment and store in Express.
