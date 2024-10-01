@@ -183,6 +183,7 @@ export const charges = "Charges";
 export const transaction_types = { withdrawal, deposit, refund, payment, reversal, transfer, fees, subscription, charges };
 // End - Default Transaction Types
 
+export const app_defaults_data_type = ['STRING', 'INTEGER', 'BIGINT', 'BOOLEAN'];
 export const paginate_limit = 20;
 
 // File lengths
