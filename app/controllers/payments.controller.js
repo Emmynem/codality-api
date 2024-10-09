@@ -1052,7 +1052,7 @@ export async function completePayment(req, res) {
 									} else if (paystack_transaction_res.data.data.status !== "success") {
 										BadRequestError(res, { unique_id: user_details.unique_id, text: `Payment unsuccessful (Status - ${return_all_letters_uppercase(paystack_transaction_res.data.data.status)})` }, null);
 									} else {
-										const { email_html, email_subject, email_text } = user_complete_payment({ reference: payload.reference });
+										const { email_html, email_subject, email_text } = user_complete_payment({ reference: payload.reference, sum_total: "NGN " + sum_total.toLocaleString() });
 
 										const mailer_response = await axios.post(
 											`${mailer_url}/send`,
@@ -1144,7 +1144,7 @@ export async function completePayment(req, res) {
 									// 	BadRequestError(res, { unique_id: user_details.unique_id, text: `Invalid transaction amount!` }, null);
 									// } 
 									else {
-										const { email_html, email_subject, email_text } = user_complete_payment({ reference: payload.reference });
+										const { email_html, email_subject, email_text } = user_complete_payment({ reference: payload.reference, sum_total: "NGN " + sum_total.toLocaleString() });
 
 										const mailer_response = await axios.post(
 											`${mailer_url}/send`,
