@@ -641,7 +641,7 @@ export async function addPayment(req, res) {
 	} else {
 		try {
 			const user_details = await USERS.findOne({
-				attributes: ['unique_id', 'username', 'firstname', 'middlename', 'lastname', 'email'],
+				attributes: ['unique_id', 'firstname', 'middlename', 'lastname', 'email'],
 				where: {
 					unique_id: user_unique_id
 				}
@@ -1107,7 +1107,7 @@ export async function completePayment(req, res) {
 												});
 											}
 										} else {
-											BadRequestError(res, { unique_id: user_unique_id, text: mailer_response.data.message }, null);
+											BadRequestError(res, { unique_id: user_details.unique_id, text: mailer_response.data.message }, null);
 										}
 									}
 								} catch (error) {
@@ -1199,7 +1199,7 @@ export async function completePayment(req, res) {
 												});
 											}
 										} else {
-											BadRequestError(res, { unique_id: user_unique_id, text: mailer_response.data.message }, null);
+											BadRequestError(res, { unique_id: user_details.unique_id, text: mailer_response.data.message }, null);
 										}
 									}
 								} catch (error) {
@@ -1267,7 +1267,7 @@ export async function completePayment(req, res) {
 								});
 							}
 						} else {
-							BadRequestError(res, { unique_id: user_unique_id, text: mailer_response.data.message }, null);
+							BadRequestError(res, { unique_id: user_details.unique_id, text: mailer_response.data.message }, null);
 						}
 					}
 				} else {
