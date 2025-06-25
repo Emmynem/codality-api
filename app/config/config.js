@@ -2,8 +2,8 @@ import crypto from 'crypto';
 import { v4 as uuidv4 } from 'uuid';
 
 export const primary_domain = "https://codalityacademy.com";
-export const mailer_url = "https://api.mailer.xnyder.com";
-export const clouder_url = "https://api.clouder.xnyder.com";
+export const mailer_url = "https://mailerapi.xnyder.com";
+export const clouder_url = "https://clouderapi.xnyder.com";
 export const paystack_verify_payment_url = "https://api.paystack.co/transaction/verify/";
 export const squad_sandbox_verify_payment_url = "https://sandbox-api-d.squadco.com/transaction/verify/";
 export const squad_live_verify_payment_url = "https://api-d.squadco.com/transaction/verify/";
