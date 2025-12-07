@@ -162,7 +162,7 @@ export async function userSignUpViaOther(req, res) {
 							}, { transaction }
 						);
 		
-						if (users) {s
+						if (users) {
 							SuccessResponse(res, { unique_id: users.unique_id, text: `Signed up successfully via ${payload.method}!` });
 						} else {
 							throw new Error("Error signing up");
